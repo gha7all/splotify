@@ -3,6 +3,7 @@ import json
 import plotly
 import plotly.express as px
 import pandas as pd
+import json
 
 app = Flask(__name__)
 
@@ -12,21 +13,28 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/chart_1')
-def chart_1():
-    df = pd.DataFrame({
-        'Fruit': ['apples', 'oranges', 'bananas', 'apples', 'oranges', 'bananas'],
-        'Amount': [4, 1, 2, 2, 4, 5],
-        'City': ['SF', 'SF', 'SF', 'Montreal', 'Montreal', 'Montreal']
-    })
+@app.route('/top_artists')
+def top_artists():
+   with open('dataset/StreamingHistory0.json') as json_file:
+      dict_json = json.load(json_file)
+   history = pd.DataFrame.from_dict(dict_json, orient='columns')
+   history.reset_index(level=0, inplace=True)
 
-    fig = px.bar(df, x='Fruit', y='Amount', color='City', barmode='group')
+   df = history.groupby(['artistName'], as_index=False).agg(
+       {'trackName': 'count'}).sort_values(by='trackName', ascending=False).head(11)
 
-    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    header = 'Fruits in north america'
-    description = 'ghazal ghazal made an app'
+   fig = px.bar(df, x=df['artistName'], y=df['trackName'])
 
-    return render_template('notdash2.html', graphJSON=graphJSON, header=header, description=description)
+   graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+   header = 'Fruits in north america'
+   description = 'ghazal ghazal made an app'
+
+   return render_template('top_artists.html', graphJSON=graphJSON, header=header, description=description)
+
+
+#  @app.route('/piechart')
+#  def piechart():
+#     return render_template('piechart.html', graphJSON=graphJSON, header=header, description=description)
 
 
 # if __name__ == '__main__':
