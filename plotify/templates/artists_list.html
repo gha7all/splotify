@@ -1,0 +1,6 @@
+<h1> This is top artists list</h1>    
+<h2> Select an artist to see top tracks </h2>      
+{% for artist in artists_names %}
+    <a href="{{ url_for('top_tracks', name = artist) }}"> {{artist}} </a>
+    <br>
+{% endfor %}

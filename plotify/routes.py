@@ -1,5 +1,5 @@
 from plotify import app
-from flask import render_template
+from flask import render_template, abort
 import json
 import plotly
 import plotly.express as px
@@ -17,7 +17,7 @@ def index():
 
 @app.route('/top_artists')
 def top_artists():
-    with open('dataset/StreamingHistory0.json') as json_file:
+    with open('plotify/dataset/StreamingHistory0.json') as json_file:
         dict_json = json.load(json_file)
     history = pd.DataFrame.from_dict(dict_json, orient='columns')
     history.reset_index(level=0, inplace=True)
@@ -35,10 +35,25 @@ def top_artists():
     return render_template('top_artists.html', graphJSON=graphJSON, header=header, description=description)
 
 
-#  @app.route('/piechart')
-#  def piechart():
-#     return render_template('piechart.html', graphJSON=graphJSON, header=header, description=description)
+@app.route('/artists')
+def artists():
+    with open('plotify/dataset/StreamingHistory0.json') as json_file:
+        dict_json = json.load(json_file)
+    history = pd.DataFrame.from_dict(dict_json, orient='columns')
+    history.reset_index(level=0, inplace=True)
+    df = history.groupby(['artistName'], as_index=False).agg(
+        {'trackName': 'count'}).sort_values(by='trackName', ascending=False).head(11)
+
+    artists_names = list(df['artistName'])
+    return render_template('artists_list.html', artists_names=artists_names)
 
 
-# if __name__ == '__main__':
-#     app.run_server(debug=True)
+@app.route('/top_tracks/<name>', methods=['GET'])
+def top_tracks(name):
+    with open('plotify/dataset/StreamingHistory0.json') as json_file:
+        dict_json = json.load(json_file)
+    history = pd.DataFrame.from_dict(dict_json, orient='columns')
+    history.reset_index(level=0, inplace=True)
+
+    tracks = list(history[history['artistName'] == name]['trackName'].unique())
+    return render_template('top_tracks.html', name=name, tracks=tracks)
