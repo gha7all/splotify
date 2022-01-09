@@ -1,5 +1,14 @@
-<h1> Top Tracks of {{name}} </h1>
+<!doctype html>
+<html>
+<body style="font-family:arial, sans-serif">
+    <h1>{{header}}</h1>
+    <div id="chart" class="chart"></div>
+    <div>{{description}}</div>
+</body>
 
-{% for track in tracks %}
-<h4> {{track}} </h4>
-{% endfor %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript">
+    var graphs = {{graphJSON | safe}};
+    Plotly.plot('chart',graphs,{});        
+</script>
+</html>
