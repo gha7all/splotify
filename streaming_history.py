@@ -5,13 +5,7 @@ import spotipy
 import pandas as pd
 import spotipy.util as util
 import json
-
-user = '46jsxjwf7z2hvkpvm6mkag69n'
-client_id = 'bf7aad0983e348b7b6a1c5d98514af95'
-client_secret = '42ea3d0d007d405aa73b8312658f2aa5'
-redirect_uri = 'http://localhost:7777/callback'
-scope = 'user-read-recently-played'
-path = 'plotify/dataset/StreamingHistory0.json'
+from config import *
 
 
 def get_token(user, client_id, client_secret, redirect_uri, scope):
