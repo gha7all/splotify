@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
 
+import {BsMusicPlayerFill} from 'react-icon'
 function Leftmenu() {
     return(
-        <div></div>
+        <div className='leftmenu'>
+            <div className='logo-container'></div>
+        </div>
             );
 }
 
