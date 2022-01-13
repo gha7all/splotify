@@ -1,6 +1,6 @@
 import React from 'react';
-
-import {BsMusicPlayerFill} from 'react-icon'
+import '../styles/leftmenu.css';
+import {BsMusicPlayerFill} from 'react-icons'
 function Leftmenu() {
     return(
         <div className='leftmenu'>
