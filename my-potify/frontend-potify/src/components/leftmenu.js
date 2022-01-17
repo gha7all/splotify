@@ -1,13 +1,11 @@
-import React from 'react'
-import { FaSearch ,FaMusic} from 'react-icons/fa';
-
-
+import React from 'react';
+import '../styles/leftmenu.css';
+import {BsMusicPlayerFill} from 'react-icons'
 function Leftmenu() {
     return(
-        <div>
-            <div className='logo-container'>
-            <h2><FaMusic/></h2></div>
-            </div>
+        <div className='leftmenu'>
+            <div className='logo-container'></div>
+        </div>
             );
 }
 
