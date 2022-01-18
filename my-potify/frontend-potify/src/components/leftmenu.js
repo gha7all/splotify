@@ -1,6 +1,8 @@
 import React from 'react'
 import { FaSearch ,FaMusic,FaEllipsisH} from 'react-icons/fa';
-import "../styles/leftmenu.css"
+import "../styles/leftmenu.css";
+import {MenuList} from './menuList'
+import { Menu } from './menu'
 
 
 function Leftmenu() {
@@ -16,6 +18,7 @@ function Leftmenu() {
                 <input type='text' placeholder='search...'/>
                 <i className='searchicon'>< FaSearch/></i>
             </div>
+           <Menu title={"menu"} menuObject={MenuList}/>
             </div>
             );
 }
