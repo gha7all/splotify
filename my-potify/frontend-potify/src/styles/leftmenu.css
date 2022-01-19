@@ -91,3 +91,30 @@ box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
     text-decoration: none;
     color: #c7c7c7;
 }
+.menuContainer ul li a i{
+    font-size: 18px;
+    margin-right: 15px;
+}
+.menuContainer ul li::before{
+    position: absolute;
+    content: " ";
+    top: 0;
+    left: -15px;
+    width:0px;
+    height: 100%;
+    background: linear-gradient(to top ,#9c54d5,#462964);
+    border-radius: 5px;
+
+}
+.menuContainer ul li:hover::before,
+.menuContainer ul li.active::before
+{
+    width: 5px;
+    transition: .3s;
+}
+.menuContainer ul li:hover a,
+.menuContainer ul li.active a{
+    color: #f1f1f1;
+    transition: .3s;
+}
+
