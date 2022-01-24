@@ -127,3 +127,6 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Junk files
+plotify/.cache-46jsxjwf7z2hvkpvm6mkag69n
