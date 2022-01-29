@@ -117,4 +117,55 @@ box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
     color: #f1f1f1;
     transition: .3s;
 }
-
+.Pl-container
+{
+    cursor: pointer;
+    margin: 15px 0;
+}
+.Pl-container .namecontainer
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #c7c7c7;
+}
+.Pl-container .namecontainer p{
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.Pl-container .namecontainer i{
+    cursor: pointer;
+    color: #f1f1f1;
+}
+.scrollPlayList
+{
+    height: 160px;
+    overflow-x: hidden; 
+    overflow-y: scroll;
+    position: relative;
+}
+.scrollPlayList .PlayList{
+    display: flex;
+    color: #c7c7c7;
+    align-items: center;
+    margin: 10px;
+    
+}
+.scrollPlayList .PlayList i{
+    font-size: 18px;
+}
+.scrollPlayList .PlayList .list{
+margin-right: 15px;
+}
+.scrollPlayList .PlayList .trash
+{
+    margin-left: auto;
+}
+.scrollPlayList .PlayList p{
+    font-size: 16px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: inline;
+}
