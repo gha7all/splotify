@@ -3,6 +3,7 @@ import { FaSearch ,FaMusic,FaEllipsisH} from 'react-icons/fa';
 import "../styles/leftmenu.css";
 import {MenuList} from './menuList'
 import { Menu } from './menu'
+import {MenuPlayList} from "./MenuPlayList"
 
 
 function Leftmenu() {
@@ -19,6 +20,8 @@ function Leftmenu() {
                 <i className='searchicon'>< FaSearch/></i>
             </div>
            <Menu title={"menu"} menuObject={MenuList}/>
+
+           <MenuPlayList/>
             </div>
             );
 }

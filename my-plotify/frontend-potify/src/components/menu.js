@@ -17,7 +17,7 @@ function Menu({title , menuObject}) {
             <ul>
                 {
                     menuObject && menuObject.map((menu)=>(
-                        <li>
+                        <li key={menu.id}>
                         {''}
                         <a href="a"><i>{menu.icon}</i>
                         <span>{menu.name}</span></a>
