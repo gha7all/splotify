@@ -1,8 +1,10 @@
 import React from 'react';
+import '../styles/Rmenu.css'
+
 
 function Rmenu() {
     return(
-<div></div>
+<div className='rmenu'></div>
     );
 }
 

@@ -1,5 +1,6 @@
 .leftmenu
-{
+{  
+    z-index: 1;
    width:240px ;
    height: 100%;
    min-height: 100vh; 
@@ -150,7 +151,7 @@ box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
     display: flex;
     color: #c7c7c7;
     align-items: center;
-    margin: 10px;
+    margin: 10px 0;
     
 }
 .scrollPlayList .PlayList i{
@@ -169,3 +170,113 @@ margin-right: 15px;
     overflow: hidden;
     display: inline;
 }
+.trackList
+{
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.trackList .top 
+{
+    display: flex;
+    align-items: center;
+
+}
+.trackList .top img
+{
+    width: 45px;
+}
+.trackList .top p
+{
+    margin-left: 10px;
+    color: #f1f1f1;
+    font-size: 14px;
+}
+.trackList .top p span
+{
+    display: block;
+    font-size: 12px;
+    color: #848484;
+}
+.trackList .bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    color: #848484;
+  }
+  
+  .trackList .bottom i {
+    font-size: 14px;
+  }
+  
+  .trackList .bottom i:hover {
+    color: #f1f1f1;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  .trackList .bottom input {
+    position: relative;
+    height: 5px;
+    border: none;
+    outline: none;
+    appearance: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+  }
+  .trackList .bottom input::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background: #49e12e;
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    z-index: 2;
+    transition: width 250ms linear;
+  }
+  .trackList .bottom input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 20px;
+    border-radius: 10px;
+    border: 2px solid #000;
+    cursor: pointer;
+    position: relative;
+    margin: -2px 0 0 0;
+    z-index: 3;
+    box-sizing: border-box;
+    transition: all 250ms linear;
+    background: #f1f1f1;
+  }
+  @media screen and (max-width: 550px) {
+    .leftMenu {
+      min-width: 64px;
+      width: 64px;
+    }
+  
+    .leftMenu .searchBox {
+      display: none;
+    }
+  
+    .leftMenu .trackList {
+      display: none;
+    }
+  
+    .leftMenu .playListContainer {
+      display: none;
+    }
+  
+    .leftMenu .menuContainer ul li a span {
+      display: none;
+    }
+  
+    .leftMenu .menuContainer ul li a i {
+      font-size: 24px;
+    }
+  
+    .leftMenu .menuContainer ul li {
+      margin: 25px 0;
+    }
+  }

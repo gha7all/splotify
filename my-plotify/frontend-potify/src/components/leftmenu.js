@@ -1,9 +1,11 @@
 import React from 'react'
 import { FaSearch ,FaMusic,FaEllipsisH} from 'react-icons/fa';
 import "../styles/leftmenu.css";
-import {MenuList} from './menuList'
-import { Menu } from './menu'
-import {MenuPlayList} from "./MenuPlayList"
+import {MenuList} from './menuList';
+import { Menu } from './menu';
+import {MenuPlayList} from "./MenuPlayList";
+import {TrackList} from './TrackList'
+
 
 
 function Leftmenu() {
@@ -22,6 +24,8 @@ function Leftmenu() {
            <Menu title={"menu"} menuObject={MenuList}/>
 
            <MenuPlayList/>
+           <TrackList/>
+           
             </div>
             );
 }
