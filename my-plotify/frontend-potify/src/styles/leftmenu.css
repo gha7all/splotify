@@ -151,7 +151,7 @@ box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
     display: flex;
     color: #c7c7c7;
     align-items: center;
-    margin: 10px 0;
+    margin: 8px 0;
     
 }
 .scrollPlayList .PlayList i{
@@ -229,7 +229,7 @@ margin-right: 15px;
     content: "";
     top: 0;
     left: 0;
-    background: #49e12e;
+    background: linear-gradient(to top ,#9c54d5,#462964);
     width: 50%;
     height: 100%;
     border-radius: 10px;
@@ -251,32 +251,32 @@ margin-right: 15px;
     background: #f1f1f1;
   }
   @media screen and (max-width: 550px) {
-    .leftMenu {
+    .leftmenu {
       min-width: 64px;
       width: 64px;
     }
   
-    .leftMenu .searchBox {
+    .leftmenu .searchbox {
       display: none;
     }
   
-    .leftMenu .trackList {
+    .leftmenu .trackList {
       display: none;
     }
   
-    .leftMenu .playListContainer {
+     .Pl-container {
       display: none;
     }
   
-    .leftMenu .menuContainer ul li a span {
+    .menuContainer ul li a span {
       display: none;
     }
   
-    .leftMenu .menuContainer ul li a i {
+    .menuContainer ul li a i {
       font-size: 24px;
     }
   
-    .leftMenu .menuContainer ul li {
+    .menuContainer ul li {
       margin: 25px 0;
     }
   }

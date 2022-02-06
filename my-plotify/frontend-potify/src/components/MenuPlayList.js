@@ -14,7 +14,7 @@ function MenuPlayList() {
       <div className='scrollPlayList'>
           {
               playList && playList.map((list)=>( 
-            <div className='PlayList'>
+            <div className='PlayList'  key={list.id}> 
               {''}
               <i className='list'><BsMusicNoteList/></i>
               <p>{list.name}</p>
