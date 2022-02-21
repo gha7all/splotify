@@ -1,5 +1,6 @@
 from plotify import app
-from flask import render_template, abort
+# from streaming_history import *
+from flask import render_template
 import json
 import plotly
 import plotly.express as px
@@ -9,11 +10,11 @@ import json
 
 colors = px.colors.qualitative.Pastel
 
+# history = get_streamings('plotify/dataset/StreamingHistory0.json')
 with open('plotify/dataset/StreamingHistory0.json') as json_file:
     dict_json = json.load(json_file)
 history = pd.DataFrame.from_dict(dict_json, orient='columns')
 history.reset_index(level=0, inplace=True)
-
 
 @app.route('/')
 def index():
@@ -29,10 +30,9 @@ def top_artists():
                  'artistName': 'Artist', 'trackName': 'Times listened'}, color_continuous_scale=colors[2])
 
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    header = 'My Top Artists'
-    description = ''
 
-    return render_template('top_artists.html', graphJSON=graphJSON, header=header, description=description)
+
+    return render_template('top_artists.html', graphJSON=graphJSON)
 
 
 @app.route('/artists')
@@ -59,6 +59,4 @@ def top_tracks():
     fig = px.pie(top_tracks_df,
                  names=top_tracks_df['trackName'], values=top_tracks_df['size'], color_discrete_sequence=colors[0:10])
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-    header = 'My Top Artists'
-    description = ''
-    return render_template('top_tracks.html', graphJSON=graphJSON, header=header, description=description)
+    return render_template('top_tracks.html', graphJSON=graphJSON)
