@@ -1,6 +1,21 @@
-<h1> This is top artists list</h1>    
-<h2> Select an artist to see top tracks </h2>      
-{% for artist in artists_names %}
-    <a href="{{ url_for('tracks', name = artist) }}"> {{artist}} </a>
-    <br>
-{% endfor %}
+{% extends 'base.html' %}
+{% block title %}
+    Artists
+{% endblock %}
+
+{% block content %}
+    
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal">Top Artists</h1>
+        <p class="lead font-weight-normal">Choose an artist</p>
+        {% for artist in artists_names %}
+            <a href="{{ url_for('tracks', name = artist) }}"> {{artist}} </a> <br>
+        {% endfor %}
+    </div>
+    <div class="product-device box-shadow d-none d-md-block"></div>
+    <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+</div>     
+
+
+{% endblock %}
