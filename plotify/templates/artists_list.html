@@ -10,7 +10,7 @@
         <h1 class="display-4 font-weight-normal">Top Artists</h1>
         <p class="lead font-weight-normal">Choose an artist</p>
         {% for artist in artists_names %}
-            <a href="{{ url_for('tracks', name = artist) }}"> {{artist}} </a> <br>
+            <a href="{{ url_for('tracks', name = artist) }}" class="btn btn-xs link-btn"> {{artist}} </a> <br> <br>
         {% endfor %}
     </div>
     <div class="product-device box-shadow d-none d-md-block"></div>
