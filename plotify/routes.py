@@ -1,5 +1,4 @@
 from plotify import app
-# from streaming_history import *
 from flask import render_template
 import json
 import plotly
@@ -10,7 +9,6 @@ import json
 
 colors = px.colors.qualitative.Pastel
 
-# history = get_streamings('plotify/dataset/StreamingHistory0.json')
 with open('plotify/dataset/StreamingHistory0.json') as json_file:
     dict_json = json.load(json_file)
 history = pd.DataFrame.from_dict(dict_json, orient='columns')

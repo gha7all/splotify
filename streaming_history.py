@@ -89,13 +89,5 @@ def append_features(token):
 token = get_token(user=user, client_id=client_id,
                   client_secret=client_secret, redirect_uri=redirect_uri, scope=scope)
 
-
-# all commented lines below this are working just fine. 
-# jt_mirrors = get_id('Mirrors', token, artist='Justin Timberlake')
-# mirrors_features = get_features(jt_mirrors, token)
-
-# print('token    ', token)
-# print('id   ', jt_mirrors)
-# print('features', mirrors_features)
-# df = append_features(token)
-# df.to_csv('streaming_audio_features.csv')
+df = append_features(token)
+df.to_csv('streaming_audio_features_new.csv')
