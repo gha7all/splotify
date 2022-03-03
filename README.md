@@ -9,10 +9,14 @@ First, You have to have the json file which spotify gives you after making a req
 This [article](https://support.spotify.com/us/article/data-rights-and-privacy-settings/) shows you how you can get your spotify personal data.
 
 ## How can you personalize Plotify?
-Simply by replacing <i> StreamingHistory0.json </i> with yours. Run streaming_history.py file to get audio features:
+
+Go to [spotify developer's dashboard](https://developer.spotify.com/dashboard/applications) create an app and add your CLIENT_ID and CLIENT_SECRET in ./config.py.
+
+Replace the  <i> StreamingHistory0.json </i> file with yours. Run streaming_history.py file to get audio features:
 ```
 python streaming_history.py
 ```
+It takes a while to run because that's where the app gets data from API.
 
  Then enable flask virtual environment and run these commands:
 ```
