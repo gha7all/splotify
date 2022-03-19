@@ -1,5 +1,5 @@
-#Splotify
-<b>Plotting spotify personal data using plotly.</b>
+# Splotify
+<b> Plotting spotify personal data using plotly. </b>
 
 ## What is Plotlify?
 Ever wanted to know more about your listening activities on spotify? Your most listened tracks, favorite artists, etc? Well, it's so true that spotify itself gives you a summery at the end of the year, but I couldn't wait till the end of the year. Splotify is a micro web application that shows you your listening activities, favorite artists, most listened tracks and also your mood based of the songs you listen to.
