@@ -1,0 +1,41 @@
+.link-btn {
+    font-weight: normal;
+    color: #ebebeb;
+    border-color: #adadad;
+    cursor: pointer;
+  }
+  
+  .link-btn:hover,
+  .link-btn:focus,
+  .link-btn:active,
+  .link-btn.active,
+  .open .dropdown-toggle.link-btn {
+    color: #333333;
+    background-color: #ebebeb;
+    border-color: #adadad;
+  }
+  
+  .link-btn:active,
+  .link-btn.active,
+  .open .dropdown-toggle.link-btn {
+    background-image: none;
+  }
+  
+  .link-btn.disabled,
+  .link-btn[disabled],
+  fieldset[disabled] .link-btn,
+  .link-btn.disabled:hover,
+  .link-btn[disabled]:hover,
+  fieldset[disabled] .link-btn:hover,
+  .link-btn.disabled:focus,
+  .link-btn[disabled]:focus,
+  fieldset[disabled] .link-btn:focus,
+  .link-btn.disabled:active,
+  .link-btn[disabled]:active,
+  fieldset[disabled] .link-btn:active,
+  .link-btn.disabled.active,
+  .btn-default[disabled].active,
+  fieldset[disabled] .btn-default.active {
+    background-color: #ffffff;
+    border-color: #cccccc;
+  }
