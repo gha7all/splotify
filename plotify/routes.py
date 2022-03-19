@@ -14,6 +14,7 @@ with open('plotify/dataset/StreamingHistory0.json') as json_file:
 history = pd.DataFrame.from_dict(dict_json, orient='columns')
 history.reset_index(level=0, inplace=True)
 
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -28,7 +29,6 @@ def top_artists():
                  'artistName': 'Artist', 'trackName': 'Times listened'}, color_continuous_scale=colors[2])
 
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
-
 
     return render_template('top_artists.html', graphJSON=graphJSON)
 
@@ -58,3 +58,23 @@ def top_tracks():
                  names=top_tracks_df['trackName'], values=top_tracks_df['size'], color_discrete_sequence=colors[0:10])
     graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
     return render_template('top_tracks.html', graphJSON=graphJSON)
+
+
+@app.route('/listening_activity/')
+def listening_activity():
+    history['secPlayed'] = history['msPlayed']/1000
+    history['endTime'] = pd.to_datetime(history['endTime'])
+    history['date'] = history['endTime'].dt.date
+    history['time'] = history['endTime'].dt.time
+    history['hour'] = history['endTime'].dt.hour
+
+    avg_per_day = history.groupby(['date'], as_index=False)[
+        'secPlayed'].agg({'avgPlayed': 'mean'})
+
+    fig = px.line(
+        x=avg_per_day['date'], y=avg_per_day['avgPlayed'])
+    fig.update_layout(
+        xaxis_title='Date',
+        yaxis_title='Average Time Of Listening (Second)')
+    graphJSON = json.dumps(fig, cls=plotly.utils.PlotlyJSONEncoder)
+    return render_template('listening_activity.html', graphJSON=graphJSON)
