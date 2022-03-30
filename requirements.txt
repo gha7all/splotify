@@ -40,6 +40,7 @@ fonttools==4.28.5
 gitdb==4.0.9
 GitPython==3.1.26
 greenlet==1.1.2
+gunicorn==20.1.0
 idna==3.3
 ipykernel==6.6.1
 ipython==8.0.0
