@@ -1,3 +1,3 @@
 web: python run.py
-web: gunicorn app.wsgi:app
-web: gunicorn --bind 0.0.0.0:$PORT main-api:app
+web: gunicorn app:app
+web: gunicorn run:app
