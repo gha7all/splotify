@@ -1,4 +1,4 @@
-# Splotify
+# [Splotify](https://s-plotify.herokuapp.com/)
 <b> Plotting spotify straming history by using plotly. </b>
 
 
